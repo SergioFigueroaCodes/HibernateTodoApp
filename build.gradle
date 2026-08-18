@@ -1,24 +1,38 @@
 plugins {
     id 'java'
+    id 'application'
 }
 
 group = 'org.example'
 version = '1.0-SNAPSHOT'
 
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
 repositories {
     mavenCentral()
 }
 
-    dependencies {
-        implementation("org.hibernate.orm:hibernate-core:7.4.3.Final")
-        implementation("jakarta.persistence:jakarta.persistence-api:3.2.0")
-        implementation("com.mysql:mysql-connector-j:9.7.0")
+dependencies {
+    implementation("org.hibernate.orm:hibernate-core:7.4.3.Final")
+    implementation("jakarta.persistence:jakarta.persistence-api:3.2.0")
+    implementation("com.mysql:mysql-connector-j:9.7.0")
 
-        testImplementation platform("org.junit:junit-bom:5.10.0")
-        testImplementation("org.junit.jupiter:junit-jupiter")
-        testRuntimeOnly("org.junit.platform:junit-platform-launcher")
-    }
+    testImplementation platform("org.junit:junit-bom:5.10.0")
+    testImplementation("org.junit.jupiter:junit-jupiter")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+}
 
+application {
+    mainClass = 'org.example.Main'
+}
+
+tasks.named('run') {
+    standardInput = System.in
+}
 
 test {
     useJUnitPlatform()
