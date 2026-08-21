@@ -1,4 +1,5 @@
 # Hibernate Todo App
+[![Java CI with Gradle](https://github.com/SergioFigueroaCodes/HibernateTodoApp/actions/workflows/gradle.yml/badge.svg)](https://github.com/SergioFigueroaCodes/HibernateTodoApp/actions/workflows/gradle.yml)
 
 A command-line task manager built with Java, Hibernate ORM, and MySQL. The project demonstrates CRUD operations, Jakarta Persistence entity mapping, transaction management, input validation, and Gradle-based builds.
 
